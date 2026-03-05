@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One ODE to Rule Them All: Joint Discrete-Continuous Molecular Generation</title>
+  <title>Joint Discrete-Continuous Flow Matching</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -17,26 +17,8 @@
   <!-- ═══════════════════════════════════════════════════════ -->
   <header class="hero">
     <div class="hero__inner">
-      <p class="hero__eyebrow">From Gaussian Noise to Molecules &mdash; Atom Types and Coordinates in One Shot</p>
-      <h1 class="hero__title">One ODE to Rule Them All: Joint Discrete-Continuous Molecular Generation</h1>
+      <h1 class="hero__title">Joint Discrete-Continuous Flow Matching</h1>
       <div class="hero__rule"></div>
-      <p class="hero__abstract">
-        Current molecular generative models treat discrete atom types and continuous 3D coordinates
-        as separate problems &mdash; coupling a CTMC-based discrete flow with a continuous flow
-        matcher, each with its own velocity field, its own integration schedule, and compounding
-        factorisation errors at low step counts. We take a different path. By embedding atom types
-        as one-hot vectors in \(\mathbb{R}^K\) and concatenating with 3D coordinates, we construct
-        a single joint state \(\mathbf{y} \in \mathbb{R}^{n \times (K+3)}\) and learn one unified
-        velocity field that transports isotropic Gaussian noise to molecular data. One ODE. One
-        denoiser. No CTMC machinery. Discrete atom types emerge naturally via argmax at \(t = 1\),
-        while coordinates are read out directly. The visualisation below shows this process on a toy
-        molecule: watch as noise simultaneously resolves into atom identities (on the probability
-        simplex) and spatial structure (in 3D) &mdash; driven by the same velocity field at every step.
-      </p>
-      <nav class="hero__links">
-        <a href="#" class="hero__link">Algorithm 3</a>
-        <a href="#" class="hero__link">Full Theory</a>
-      </nav>
     </div>
   </header>
 
