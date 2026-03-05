@@ -1,0 +1,267 @@
+/* ═══════════════════════════════════════════════════════════
+   Molecular Flow Matching — Stylesheet
+   Discrete Flow Maps aesthetic
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --bg:           #ffffff;
+  --ink:          #2e4552;
+  --teal:         #2f533f;
+  --maroon:       #965c58;
+  --simplex-fill: #f2eee0;
+  --box-edge:     #c3c3c3;
+  --cloud:        #90a0aa;
+  --gold:         #d4a843;
+
+  --font-body:  'Inter', 'Helvetica Neue', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.65;
+  font-size: clamp(17px, 1.25vw, 22px);
+}
+
+::selection {
+  background: rgba(47, 83, 63, 0.15);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+
+.hero {
+  padding: 4rem 2rem 3rem;
+}
+
+.hero__inner {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero__eyebrow {
+  font-size: 0.8em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cloud);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.hero__rule {
+  width: 60px;
+  height: 3px;
+  background: var(--teal);
+  margin: 1.8rem auto;
+  border-radius: 2px;
+}
+
+.hero__abstract {
+  font-size: 1em;
+  color: var(--ink);
+  opacity: 0.8;
+  line-height: 1.75;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.hero__links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.hero__link {
+  display: inline-block;
+  padding: 0.55rem 1.6rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.85em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.hero__link:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   METHOD EXPLAINER
+   ═══════════════════════════════════════════════════════════ */
+
+.method-explainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem clamp(2rem, 5vw, 4rem);
+}
+
+.method-explainer p {
+  margin-bottom: 1rem;
+}
+
+.method-explainer p:last-child {
+  margin-bottom: 0;
+}
+
+.method-explainer em {
+  font-style: italic;
+  color: var(--teal);
+  font-weight: 500;
+}
+
+.display-math {
+  margin: 0.8rem 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   VISUALIZATION
+   ═══════════════════════════════════════════════════════════ */
+
+.visualization {
+  padding: 0 clamp(1.5rem, 4vw, 3rem) 3rem;
+}
+
+.time-slider-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+}
+
+.time-slider-label {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--teal);
+  min-width: 4.5ch;
+}
+
+.time-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: rgba(46, 69, 82, 0.12);
+  border-radius: 4px;
+}
+
+.time-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.time-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.time-slider::-webkit-slider-runnable-track {
+  background: var(--teal);
+  height: 8px;
+  border-radius: 4px;
+  opacity: 0.4;
+}
+
+.time-slider::-moz-range-track {
+  background: var(--teal);
+  height: 8px;
+  border-radius: 4px;
+  opacity: 0.4;
+}
+
+.canvas-panels {
+  width: 100%;
+  height: 70vh;
+  max-height: 600px;
+  border: 1px solid rgba(46, 69, 82, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.canvas-panels canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+
+.site-footer {
+  padding: 2rem 2rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid rgba(46, 69, 82, 0.08);
+}
+
+.footer-note {
+  color: var(--cloud);
+  font-size: 0.75em;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .canvas-panels {
+    height: 50vh;
+  }
+
+  .time-slider-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   KATEX OVERRIDES
+   ═══════════════════════════════════════════════════════════ */
+
+.katex-display {
+  margin: 0.6em 0;
+}
+
+.katex {
+  font-size: 1.2em;
+}
+
+.display-math .katex-display {
+  font-size: 1.10em;
+}
